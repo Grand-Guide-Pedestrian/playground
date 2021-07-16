@@ -9,9 +9,15 @@ import { useAppDispatch } from '../store/hooks';
 import { cleareError } from '../store/slices/commonSlice';
 import { onGameInfoChange } from '../store/slices/gameSlice';
 
+import logo from '../static/logo.png';
+
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
-        width: '100%'
+        width: '100%',
+    },
+    logo: {
+        width: '400px',
+        marginBottom: '40px',
     },
     form: {
         display: 'flex',
@@ -61,6 +67,7 @@ const Login: React.FC<{}> = () => {
 
     return (
         <>
+            <img src={logo} className={classes.logo} />
             <section className={`login ${classes.root}`}>
                 <form onSubmit={onLogin} className={`${classes.form}`}>
                     <TextField
